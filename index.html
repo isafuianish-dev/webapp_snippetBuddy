@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snippet Buddy</title>
+<link rel="icon" type="image/png" href="media/favicon.png">
+<link rel="stylesheet" href="https://isafuianish-dev.github.io/webapp_cdnBuddy/css/tokens.css">
+<link rel="stylesheet" href="https://isafuianish-dev.github.io/webapp_cdnBuddy/css/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/theme-init.js" data-app="webapp_snippetBuddy"></script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="brand-icon" aria-hidden="true"><span class="icon" style="-webkit-mask-image:url(media/icon.svg);mask-image:url(media/icon.svg);"></span></span>
+      <h1>Snippet Buddy</h1>
+    </div>
+    <div class="topbar-actions">
+      <button id="btnSettings" class="btn btn-ghost btn-icon" title="Settings" aria-label="Settings"></button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="panel panel-books">
+      <div class="panel-header">
+        <input type="search" id="bookSearch" class="search-input" placeholder="Search" aria-label="Search books">
+        <div class="panel-header-actions">
+          <button id="btnNewBook" class="btn btn-primary">New Book</button>
+          <button id="btnExportAll" class="btn btn-ghost btn-icon" title="Export all data as JSON" aria-label="Export data"></button>
+          <label class="btn btn-ghost btn-icon file-btn" title="Import data from JSON" aria-label="Import data">
+            <span class="file-btn-icon" id="fileBtnIcon"></span>
+            <input type="file" id="fileImportData" accept="application/json">
+          </label>
+        </div>
+      </div>
+      <ul id="bookList" class="book-list"></ul>
+      <p class="empty-hint sidebar-sample-hint" id="sidebarLoadSampleHint" hidden>No books yet. <a href="#" id="linkLoadSampleSidebar" class="link-accent">Load sample</a>.</p>
+    </aside>
+
+    <main class="panel panel-main">
+      <div class="empty-state" id="noBooksState" hidden></div>
+
+      <div id="mainContent">
+        <div class="main-header">
+          <h2 class="panel-title" id="activeBookTitle"></h2>
+          <button type="button" class="btn btn-primary" id="btnNewSnippet">New Snippet</button>
+        </div>
+
+        <div class="toolbar">
+          <input type="search" id="snippetSearch" class="search-input" placeholder="Search snippets..." aria-label="Search snippets">
+          <div id="languageFilterContainer" class="language-filter"></div>
+          <button id="btnArchiveView" type="button" class="btn btn-ghost btn-icon" title="View archive" aria-label="View archive"></button>
+        </div>
+
+        <div class="grid-wrap" id="gridWrap">
+          <section class="snippet-section" id="pinnedSection" hidden>
+            <h3 class="section-title">Pinned</h3>
+            <div class="snippet-grid" id="pinnedGrid"></div>
+          </section>
+          <section class="snippet-section" id="othersSection">
+            <h3 class="section-title" id="othersTitle">Snippets</h3>
+            <div class="snippet-grid" id="othersGrid"></div>
+          </section>
+          <p class="empty-hint grid-empty-hint" id="emptyState" hidden></p>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/utils.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/icons.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/modal.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/theme.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/settings.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/markdown.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/manual.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
